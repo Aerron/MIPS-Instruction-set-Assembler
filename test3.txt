@@ -1,0 +1,30 @@
+#shfbgvldvs
+
+.text
+addi $s0, $0, 5
+addi $s1, $0, 65535 
+add $s2, $0, $0	     #counting in first 32 bits
+add $s3, $0, $0	     #counting in second 32 bits
+add $t0, $s0, $0	 #for 1st number variable
+add $t1, $s1, $0	 #for 2nd 32 bit number variable
+addi $t3, $0, 32	     #for counting 32 bits
+add $t4, $0, $0	     #program counter
+addi $t5, $0, 2
+L1:
+	beq  $t3, $t4, Exit1	#for loop until 32 bits
+	andi $t2, $t0, 1	    #for most significant digit
+	add $s2, $s2, $t2		#Adding the number of ones
+	mul $t0, $t0, $t5		#left shift
+	addi $t4, $t4, 1		    #COUNTER
+	j    L1
+Exit1:
+add $t4, $0, $0			    #Intializing t4 again to 0
+L2:
+	beq  $t3, $t4, Exit2	#for loop until 32 bits
+	andi $t2, $t1, 1	    #for most significant digit
+	add $s3, $s3, $t2		#Adding the number of ones
+	mul $t1, $t1, $t5		#leftshift
+	addi $t4, $t4, 1		    #COUNTER
+	j    L2
+Exit2:
+halt

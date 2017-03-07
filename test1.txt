@@ -1,0 +1,25 @@
+#shfbgvldvs
+.text
+addi $t0, $0, 12 
+add $t1, $t0, $t0
+#djgbuvjewh
+and $t2, $t0, $t1
+andi $t3, $t2, 26
+or $t4, $t0, $t1
+ori $t5, $t2, 26
+nor $t6, $t0, $t1
+slt $t7, $t0, $t1
+slti $t8, $t2, 26
+sub $sp, $sp, $t0
+sw $t6, 0($sp)
+sw $t3, 4($sp)
+lw $t9, 4($sp)
+beq $t6, $t9, L3
+mul $s0, $t0, $t1
+L3:
+add $t1, $t0, $t0
+j L4
+slti $t8, $t2, 26
+L4:
+and $t2, $t0, $t1
+#asfljl
